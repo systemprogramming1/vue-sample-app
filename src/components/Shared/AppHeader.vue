@@ -57,6 +57,7 @@ import Vue from "vue";
 import HelpWin from "../ToolButtons/ToggleButton";
 import ZoomToMaxExtentButton from "../ToolButtons/ZoomToMaxExtentButton";
 import LayerListToggleButton from '../Layer/ToggleButton'
+import InfoClickButton from '../LayerInfo/ToggleButton'
 import LogoutToggleButton from '../Login/Logout'
 
 export default {
@@ -66,6 +67,7 @@ export default {
     'wgu-zoomtomaxextent-btn': ZoomToMaxExtentButton,
     'wgu-layerlist-btn': LayerListToggleButton,
     'wgu-logout-btn': LogoutToggleButton,
+    'dst-infoclick-btn': InfoClickButton,
   },
   props: {
     color: { type: String, required: false, default: "red darken-3" },

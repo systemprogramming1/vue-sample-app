@@ -34,6 +34,7 @@ import AppFooter from "./Shared/AppFooter";
 import OlMap from "./Map/Map";
 import { AppEventBus } from '../AppEventBus';
 import LayerListWin from '../components/Layer/LayerListWin'
+import LayerInfoWin from '../components/LayerInfo/InfoLayerWin'
 
 export default {
   name: "wgu-app-tpl",
@@ -42,6 +43,7 @@ export default {
     "wgu-app-footer": AppFooter,
     "wgu-app-map": OlMap,
     'wgu-layerlist-win': LayerListWin,
+    'dst-infoclick-win': LayerInfoWin,
   },
   data() {
     return {
