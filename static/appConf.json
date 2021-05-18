@@ -23,7 +23,7 @@
     "DefaultItemsLang": 
       { "id": "1", "text": "Türkçe" }
     ,
-    "mapZoom": 6,
+    "mapZoom": 6,   
     "mapCenter": [3815913.478164446, 4690478.58949841],
     "projection": "EPSG:3857",
     "mapGeodataDragDop": {
