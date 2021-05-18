@@ -1,0 +1,78 @@
+{
+
+    "title": "Sudabis Vue.js / OpenLayers",
+  
+    "baseColor": "blue darken-1",
+  
+    "logo": "https://dummyimage.com/100x100/aaa/fff&text=Wegue",
+    "logoWidth": "100",
+    "logoHeight": "100",
+  
+    "footerTextLeft": "Powered by <a href='https://www.basarsoft.com.tr/' target='_blank'>Sudabis</a>",
+    "footerTextRight": "Başarsoft",
+    "showCopyrightYear": true,
+
+    "webApi_Url": "http://dst.basarsoft.com.tr/Meski/WebService",
+
+    "geoserver_Url": "http://dst.basarsoft.com.tr/basarserver/MESKI/wms",
+
+    "itemsLang": [
+      { "id": "1", "text": "Türkçe" },
+      { "id": "2", "text": "İngilizce" }
+    ],
+    "DefaultItemsLang": 
+      { "id": "1", "text": "Türkçe" }
+    ,
+    "mapZoom": 6,
+    "mapCenter": [3815913.478164446, 4690478.58949841],
+    "projection": "EPSG:3857",
+    "mapGeodataDragDop": {
+      "formats": ["GeoJSON", "KML"],
+      "zoomToData": true,
+      "replaceData": true,
+      "displayInLayerList": true,
+      "layerName": "Uploaded Data"
+    },
+  
+    "permalink": {
+      "location": "hash",
+      "layers": true,
+      "extent": false,
+      "projection": "EPSG:4326",
+      "paramPrefix": "",
+      "history": true
+    },
+  
+    "modules": {
+      "wgu-layerlist": {
+        "target": "menu",
+        "win": true,
+        "draggable": true,
+        "initPos": {
+          "left": 8,
+          "top": 74
+        }
+      },
+      "wgu-zoomtomaxextent": {
+        "target": "toolbar",
+        "darkLayout": true
+      },
+      "wgu-helpwin": {
+        "target": "toolbar",
+        "darkLayout": true, 
+        "windowTitle": "Hakkında",
+        "textTitle": "About Project",
+        "htmlContent": "<b>Sudabis with OpenLayers and Vue.js</b>",
+        "infoLinkText": "More Info",
+        "infoLinkUrl": ""
+      },
+      "wgu-logout": {
+        "target": "toolbar",
+        "darkLayout": true
+      }
+     
+      
+
+    }
+  }
+  

@@ -1,0 +1,247 @@
+
+* {box-sizing: border-box;}
+
+#app {
+  background-image: url('../img/login5.jpg')  !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: 'Times New Roman', serif;
+     
+}
+.container {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  height: 525px;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 450px;
+}
+
+.logoLgn{
+  align-content: center;
+  color: white;
+  border: 2px;
+  margin: 15px;
+  width: 210px;
+
+}
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgb(0 0 0 / 0%);
+}
+
+.v-input__slot {
+  align-items: center;
+  color: inherit;
+  display: flex;
+  margin-bottom: 8px;
+  min-height: 42px;
+  position: relative;
+  transition: .3s cubic-bezier(.25,.8,.5,1);
+  width: 100%;
+  border-top-right-radius: 8px !important;
+  border-bottom-right-radius: 8px!important;
+}
+
+.input-container {
+  display: flex;
+  /* margin-bottom: 14px; */
+  margin: 13px 42px 0px;
+  width: 270px;
+}
+
+.input-chk {
+  display: flex;
+  /* margin-bottom: 14px; */
+  margin: -40px 39px 0px;
+}
+
+
+.icon {
+  padding: 15px;
+  background:#00264d;
+  color: white;
+  min-width: 45px;
+  text-align: center;
+  height: 42px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  background-color: #526b89;
+  border-radius: 1px;
+  border: 0px;
+  color: white;
+  font-size: medium;
+  height: 42px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.v-input__slot .v-label {
+  color: #2f4763;
+  margin-top: 10px;
+  font-size: small;
+  font-style: italic;
+}
+
+.theme--light.v-input, .theme--light.v-input input, .theme--light.v-input textarea {
+  color: white !important;
+  font-family: "Roboto Condensed";
+  font-size: 13px;
+}
+
+  .v-input input {
+    border-style: none;
+}
+form {
+  background-image: linear-gradient(to right top, #d0a7ab, #e1a5aa, #d3c0c0, #ccb6e7, #c9cbf7, #a5d1f3, #cdd8fb, #7ea8e2, #7ca7e8, #85a9e0, #83abe8, #3983e8);
+  border-radius: 28px;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: 20px 20px 40px -6px rgb(0 0 0 / 20%);
+  text-align: center;
+  position: relative;
+  height: 476px;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 476px;
+}
+
+.Loginbtn {
+  outline: 0;
+  border: 0;
+  color: #00264d;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 24px;
+}
+
+form p {
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  color: #fff;
+  opacity: 0.7;
+  font-size: 1.4rem;
+  margin-top: 0;
+  margin-bottom: 60px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+::placeholder {
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  font-size: 13px !important;
+  font-family: "Roboto";
+  overflow-wrap: break-word;
+}
+.drop {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 10px 10px 60px -8px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  transition: all 0.2s ease;
+}
+.drop-1 {
+  height: 80px;
+  width: 80px;
+  top: -20px;
+  left: -40px;
+  z-index: -1;
+}
+.drop-1:hover {
+  transform: translate(-2px, -3px);
+}
+.drop-2 {
+  height: 80px;
+  width: 80px;
+  bottom: -30px;
+  right: -10px;
+}
+.drop-2:hover {
+  transform: translate(3px, 4px);
+}
+.drop-3 {
+  height:58px;
+  width: 273px;
+  bottom: 38px;
+  right: 102px;
+  z-index: -1;
+}
+
+.drop-4 {
+  height: 77px;
+  width: 241px;
+  top: 75px;
+  left: 132px;
+  background-color: #00264d;
+
+}
+
+.drop-5 {
+  width: 74%;
+  height: 290px;
+  top: 50%;
+  left: 50%;
+  margin-left: -178px;
+  border-radius: 23px;
+  margin-top: -126px;
+}
+input:focus, select:focus, textarea:focus, button:focus {
+  outline: none;
+}
+@media only screen and (min-width: 600px) {
+  .form {
+    background-image: linear-gradient(to right top, #d0a7ab, #e1a5aa, #d3c0c0, #ccb6e7, #c9cbf7, #a5d1f3, #cdd8fb, #87b2ef, #b4c6e2, #85a9e0, #83abe8, #3983e8);
+     border-radius: 28px;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: 20px 20px 40px -6px rgb(0 0 0 / 20%);
+    text-align: center;
+    position: relative;
+    height: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 100%;
+  }
+
+  .v-application--wrap {
+    flex: 1 1 auto;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    /* min-height: 100vh; */
+    /* max-width: 100%; */
+    /* position: relative; */
+}
+}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
