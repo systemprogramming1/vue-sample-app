@@ -26,7 +26,7 @@ export const routes = [
 Vue.use(VueRouter);
 
 export const router = new VueRouter({
-    base: '/DstVueSample/',
+    base: process.env.NODE_ENV === 'production' ? '/DstVueSample/' : '/',
     mode: "history",//# çıkmasın
     routes
 })
