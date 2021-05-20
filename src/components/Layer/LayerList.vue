@@ -49,6 +49,7 @@ export default {
     },
 
     updateForm(selection) {
+      debugger;
       var layerList = this.$store.getters.getUserLayer;
       var _districtcodes = this.$store.getters.getUserRegionId;
       if (_districtcodes != null) {
