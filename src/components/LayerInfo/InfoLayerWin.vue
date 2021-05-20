@@ -1,23 +1,21 @@
 <template>
 
-  <v-card class="dst-infoclick-win" v-draggable-win="draggable"  v-if=show v-bind:style="{ left: left, top: top }">
+  <v-card class="wgu-infoclick-win"  v-if=show v-bind:style="{ left: left, top: top }">
     <v-toolbar :color="color" class="" dark>
       <v-icon>{{icon}}</v-icon>
-      <v-toolbar-title class="dst-win-title">{{title}}</v-toolbar-title>
+      <v-toolbar-title class="wgu-win-title">{{title}}</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-app-bar-nav-icon @click="show = false"><v-icon>close</v-icon></v-app-bar-nav-icon>
     </v-toolbar>
-    <v-card-title primary-title class="dst-infoclick-win-title">
+    <v-card-title primary-title class="wgu-infoclick-win-title">
 
       <div v-if="!this.attributeData && !this.coordsData" class="no-data">
-        Click on the map to get information for the clicked map position.
+        Lütfen bilgi almak istediğiniz noktaya tıklayınız...
       </div>
 
-      <!-- feature property grid -->
-      <wgu-property-table :properties="attributeData" :color="color" />
+      <dst-property-table :properties="attributeData" :color="color" />
 
-      <!-- click coodinate info grid -->
-      <wgu-coords-table :coordsData="coordsData" :color="color" />
+      <dst-coords-table :coordsData="coordsData" :color="color" />
 
     </v-card-title>
   </v-card>
@@ -26,18 +24,21 @@
 
 <script>
 
-import { WguEventBus } from '../../AppEventBus';
+import { AppEventBus } from '../../AppEventBus';
 import PropertyTable from './PropertyTable';
+import CoordsTable from './CoordsTable';
+
 
 export default {
-  name: 'wgu-infoclick-win',
+  name: 'dst-infoclick-win',
   components: {
-    'wgu-property-table': PropertyTable
+    'dst-property-table': PropertyTable,
+    'dst-coords-table': CoordsTable
   },
   props: {
     color: {type: String, required: false, default: 'red darken-3'},
     icon: {type: String, required: false, default: 'info'},
-    title: {type: String, required: false, default: 'Map Click Info'},
+    title: {type: String, required: false, default: 'Bilgi Al'},
     draggable: {type: Boolean, required: false, default: true},
     initPos: {type: Object, required: false}
   },
@@ -52,7 +53,11 @@ export default {
   },
   created () {
     var me = this;
-    
+    // Listen to the ol-map-mounted event and receive the OL map instance
+    AppEventBus.$on('ol-map-mounted', (olMap) => {
+      // make the OL map accessible in this component
+      me.map = olMap;
+    });
   },
   methods: {
     toggleUi () {
@@ -67,18 +72,24 @@ export default {
         me.map.on('singleclick', me.onMapClick);
       }
     },
-   
+    /**
+     * Handler for 'singleclick' on the map.
+     * Collects data and passes it to corresponding objects.
+     *
+     * @param  {ol/MapBrowserEvent} evt The OL event of 'singleclick' on the map
+     */
     onMapClick (evt) {
       const me = this;
       let featureLayer = me.map.forEachFeatureAtPixel(evt.pixel,
         (feature, layer) => {
           return [feature, layer];
         });
-
-    
+debugger;
+      // collect feature attributes --> PropertyTable
       if (featureLayer) {
         const feat = featureLayer[0];
         let props = feat.getProperties();
+        // do not show geometry property
         delete props.geometry;
 
         me.attributeData = props;
@@ -86,7 +97,7 @@ export default {
         me.attributeData = null;
       }
 
-   
+      // collect click coordinate + projection --> CoordsTable
       me.coordsData = {
         coordinate: evt.coordinate,
         projection: me.map.getView().getProjection().getCode()
@@ -114,7 +125,7 @@ export default {
   .wgu-infoclick-win {
     background-color: white;
     z-index: 2;
-    width: 450px;
+    width: 480px;
   }
 
   .v-card.wgu-infoclick-win {

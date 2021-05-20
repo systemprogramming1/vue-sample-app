@@ -214,5 +214,3 @@ export const DraggableWin = {
   }
 };
 
-// Make directive available globally
-Vue.directive('draggable-win', DraggableWin);

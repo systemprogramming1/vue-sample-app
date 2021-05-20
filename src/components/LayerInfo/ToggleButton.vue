@@ -9,7 +9,7 @@
 
 <script>
 import Vue from 'vue'
-import { WguEventBus } from '../../AppEventBus'
+import { AppEventBus } from '../../AppEventBus'
 
 export default {
   name: 'dst-infoclick-btn',
@@ -25,7 +25,13 @@ export default {
   },
   created () {
     var me = this;
-   
+    // TODO move to a father class
+    AppEventBus.$on('app-mounted', () => {
+      me.win = Vue.prototype.cmpLookup[me.moduleName + '-win'];
+    });
+    if (!me.win) {
+      me.win = Vue.prototype.cmpLookup[me.moduleName + '-win'];
+    }
   },
   methods: {
     toggleUi () {
