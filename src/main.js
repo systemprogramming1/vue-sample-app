@@ -11,6 +11,7 @@ import 'devextreme/dist/css/dx.common.css';
 import 'devextreme/dist/css/dx.light.css';
 import VueSimpleAlert from "vue-simple-alert";
 import './assets/css/wegue.css'
+import './assets/css/loading.css'
 import '@mdi/font/css/materialdesignicons.css'
 
 Vue.use(Vuetify);

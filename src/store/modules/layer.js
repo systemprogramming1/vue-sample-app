@@ -12,7 +12,6 @@ const getters = {
         return state.layerList;
     }
 }
-
 const mutations = {
     updateLayerInfo(state) {
       this._layerList = [];
@@ -28,10 +27,10 @@ const mutations = {
         authList.join(",");
       }
    
-      layerList.forEach((element) => {
+      layerList.forEach((_group) => {
         var _openLayers = [];
         var _cqlFilter = [];
-        element.children.forEach((_layer) => {
+        _group.children.forEach((_layer) => {
           if (_layer.isOpen) {
             _openLayers.push(_layer.workspaceName + ":" + _layer.layerName);
             _cqlFilter.push(" auth_region_id IN(" + authList+ ")");
@@ -40,7 +39,7 @@ const mutations = {
 
         const layer = new TileLayer({
           name: "WMS",
-          title: element.layerName,
+          title: _group.layerName,
           crossOrigin: "Anonymous",
           source: new TileWmsSource({
             url: Vue.prototype.$appConfig.geoserver_Url,

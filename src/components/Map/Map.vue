@@ -21,11 +21,6 @@ export default {
       this.$store.commit("updateLayerInfo");
       var _layerList = this.$store.getters.getLayerInfo;
       var map = new Map({
-        controls: defaultControls().extend([
-          new ScaleLine({
-            units: "degrees",
-          }),
-        ]),
         target: "map",
         layers: _layerList,
         view: new View({

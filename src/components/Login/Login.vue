@@ -68,7 +68,7 @@
 
       <div class="drops">
         <div class="drop drop-4">
-          <img :src="'src/assets/img/web_logo_300x60.png'" class="logoLgn" />
+          <img :src="headerLogo" class="logoLgn" />
         </div>
       </div>
     </div>
@@ -78,6 +78,7 @@
 <script>
 import LoadingBar from "../Shared/LoadingBar.vue";
 import "../../assets/css/login.css";
+import headLogo from "../../assets/img/web_logo_300x60.png";
 export default {
   components: {
     LoadingBar,
@@ -90,6 +91,7 @@ export default {
       rememberMe: false,
       password: "",
       show1: false,
+      headerLogo:headLogo,
       DefaultSelectedLang: this.$appConfig.DefaultItemsLang,
       rules: {
         required: (value) => !!value || "Gerekli.",
