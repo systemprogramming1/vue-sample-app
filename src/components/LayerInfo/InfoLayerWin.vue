@@ -79,6 +79,9 @@ export default {
      * @param  {ol/MapBrowserEvent} evt The OL event of 'singleclick' on the map
      */
     onMapClick (evt) {
+
+debugger;
+      this.$store.commit("getInfo");
       const me = this;
       let featureLayer = me.map.forEachFeatureAtPixel(evt.pixel,
         (feature, layer) => {
