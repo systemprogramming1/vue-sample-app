@@ -7,8 +7,8 @@ module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: process.env.NODE_ENV === 'production' ? 'http://dst.basarsoft.com.tr/DstVueSample/dist/' : '/dist/',
-    filename: 'build.js'
+    publicPath: process.env.NODE_ENV === 'production' ? '/DstVueSample/dist/' : '/',
+    filename: 'build.js',
   },
   module: {
     rules: [

@@ -77,8 +77,8 @@
 
 <script>
 import LoadingBar from "../Shared/LoadingBar.vue";
-import "../../assets/css/login.css";
-import headLogo from "../../assets/img/web_logo_300x60.png";
+import "../../../static/css/login.css";
+import headLogo from "../../../static/img/web_logo_300x60.png";
 export default {
   components: {
     LoadingBar,
