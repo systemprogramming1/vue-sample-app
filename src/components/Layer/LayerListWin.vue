@@ -1,7 +1,7 @@
 <template>
   <v-card
     class="wgu-layerlist"
-    height="80%"
+    height="60%"
     v-if="show"
     v-bind:style="{ left: left, top: top }"
   >
