@@ -13,7 +13,7 @@ export const initAuth = ({ commit, dispatch }) => {
 
         } else {
             commit("setToken", token);
-            let remainingTime= expirationTime-dateNow;
+            let remainingTime = expirationTime - dateNow;
             dispatch("setTimeoutTimer", remainingTime)
             router.push("/Home").catch(() => { });
 
