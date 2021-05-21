@@ -18,8 +18,8 @@
 <script>
 import { mapableMixin } from "../../mixin/mapableMixin";
 import TileWmsSource from "ol/source/TileWMS";
-import LayerUtil from '../../util/layerUtil';
-import Vue from 'vue';
+import LayerUtil from "../../util/layerUtil";
+import Vue from "vue";
 
 export default {
   name: "wgu-layerlist",
@@ -32,8 +32,10 @@ export default {
     };
   },
   watch: {
-    selection(newValue) {
-      this.updateForm(newValue);
+    selection(newValue,oldValue) {
+      if (newValue.length!=oldValue.length) {
+        this.updateForm(newValue);
+      }
     },
   },
   methods: {
@@ -49,7 +51,6 @@ export default {
     },
 
     updateForm(selection) {
-      debugger;
       var layerList = this.$store.getters.getUserLayer;
       var _districtcodes = this.$store.getters.getUserRegionId;
       if (_districtcodes != null) {
@@ -70,10 +71,9 @@ export default {
 
       for (var i = layerList.length - 1; i >= 0; i--) {
         var _group = layerList[i];
-        const _layer = LayerUtil.getLayerByTitle(_group.layerName, this.map); 
+        const _layer = LayerUtil.getLayerByTitle(_group.layerName, this.map);
 
         if (_group.children.length > 0 && _layer != undefined) {
-        
           var _openLayers = [];
           var _cqlFilter = [];
 
