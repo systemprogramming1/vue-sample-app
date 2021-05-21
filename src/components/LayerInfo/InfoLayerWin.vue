@@ -84,7 +84,6 @@ export default {
         (feature, layer) => {
           return [feature, layer];
         });
-debugger;
       // collect feature attributes --> PropertyTable
       if (featureLayer) {
         const feat = featureLayer[0];
