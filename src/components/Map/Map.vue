@@ -7,6 +7,7 @@ import "ol/ol.css";
 import Map from "ol/Map";
 import View from "ol/View";
 import { AppEventBus } from "../../AppEventBus";
+import ZoomSlider from "ol/control/ZoomSlider";
 
 export default {
   mounted() {
@@ -30,6 +31,7 @@ export default {
       });
 
       Vue.prototype.$map = map;
+      map.getControls().extend([new ZoomSlider()]);
       AppEventBus.$emit("ol-map-mounted", map);
     },
   },
@@ -42,6 +44,53 @@ export default {
   padding: 0;
   height: 99%;
   width: 100%;
+}
+
+#map .ol-zoom .ol-zoom-out {
+  margin-top: 200px;
+}
+#map .ol-zoomslider {
+  background-color: #ece5d7;
+  top: 14.0em;
+}
+
+#map .ol-zoom {
+  top: 12.5em;
+  left: 0.5em;
+}
+
+#map .ol-control button {
+  bottom: 25px;
+  display: block;
+  padding: 0;
+  color: white;
+  font-size: 1.14em;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  height: 1.375em;
+  width: 1.375em;
+  line-height: 0.4em;
+  background-color: rgba(0, 60, 136, 0.5);
+  border: none;
+  border-radius: 2px;
+}
+
+#map .ol-touch .ol-zoom .ol-zoom-out {
+  margin-top: 212px;
+}
+#map .ol-touch .ol-zoomslider {
+  top: 2.75em;
+}
+
+#map .ol-zoom-in.ol-has-tooltip:hover [role="tooltip"],
+#map .ol-zoom-in.ol-has-tooltip:focus [role="tooltip"] {
+  top: 3px;
+}
+
+#map .ol-zoom-out.ol-has-tooltip:hover [role="tooltip"],
+#map .ol-zoom-out.ol-has-tooltip:focus [role="tooltip"] {
+  top: 232px;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

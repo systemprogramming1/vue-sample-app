@@ -8,6 +8,17 @@
     />
     <dst-app-map />
 
+    <div class="base-layers-panel">
+      <div class="buttons has-addons">
+        <button class="btn btn-light" v-for="layer in baseLayers"
+                :key="layer.name" :class="{ 'is-info': layer.visible }"
+               >
+          {{ layer.title }}
+        </button>
+     
+      </div>
+    </div>
+
     <template v-for="(moduleWin, index) in moduleWins">
       <component
         :is="moduleWin.type" :key="index" :ref="moduleWin.type"
@@ -53,6 +64,25 @@ export default {
       showCopyrightYear: Vue.prototype.$appConfig.showCopyrightYear,
       baseColor: Vue.prototype.$appConfig.baseColor,
       moduleWins: this.getModuleWinData(),
+          baseLayers: [
+          {
+            name: 'osm',
+            title: 'OpenStreetMap',
+            visible: true,
+          },
+          {
+            name: 'sputnik',
+            title: 'Sputnik Maps',
+            visible: false,
+          },
+          {
+            name: 'bingmaps',
+            title: 'Bing Maps',
+            apiKey: 'ArbsA9NX-AZmebC6VyXAnDqjXk6mo2wGCmeYM8EwyDaxKfQhUYyk0jtx6hX5fpMn',
+            imagerySet: 'CanvasGray',
+            visible: false,
+          },
+        ],
     };
   },
   created() {
@@ -88,3 +118,13 @@ export default {
     }
 };
 </script>
+
+<style>
+ .base-layers-panel{
+     position: absolute;
+      left: 50%;
+      bottom: 45px;
+      transform: translateX(-50%);
+ }
+    
+</style>
