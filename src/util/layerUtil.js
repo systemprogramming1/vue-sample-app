@@ -1,4 +1,4 @@
-
+import {store} from "../store/store";
  const LayerUtil = {
     /**
      * Returns a set of map layers which matches the given key value pair.
@@ -33,6 +33,23 @@
     getLayerByTitle (lid, olMap) {
       return LayerUtil.getLayersBy('title', lid, olMap)[0];
     },
+
+
+   GetLayerTitle(_layerName) {
+    var layerList = store.getters.getUserLayer;
+      var result = '';
+      for (var i = 0; i < layerList.length; i++) {
+          var _group = layerList[i];
+          for (var m = 0; m < _group.children.length; m++) {
+              if (_group.children[m].layerName == _layerName) {
+                  result = _group.children[m].layerTitle;
+              }
+          }
+      }
+      return result;
+  },
+
+
   
     /**
      * Zooms to the given layer's extent.

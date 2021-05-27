@@ -7,7 +7,7 @@ module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: process.env.NODE_ENV === 'production' ? '/DstVueSample/dist/' : '/',
+    publicPath: process.env.NODE_ENV === 'production' ? '/DstVueSample/dist/' : 'dist/',
     filename: 'build.js',
   },
   module: {
