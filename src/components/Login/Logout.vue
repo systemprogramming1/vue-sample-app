@@ -10,7 +10,7 @@
 <script>
 
 export default {
-  name: 'wgu-logout-btn',
+  name: 'dst-logout-btn',
   props: {
     icon: {type: String, required: false, default: 'logout'},
     text: {type: String, required: false, default: ''},

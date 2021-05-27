@@ -1,20 +1,20 @@
 <template>
   <v-card
-    class="wgu-layerlist"
+    class="dst-layerlist"
     height="60%"
     v-if="show"
     v-bind:style="{ left: left, top: top }"
   >
     <v-toolbar :color="color" class="" dark>
       <v-icon>{{ icon }}</v-icon>
-      <v-toolbar-title class="wgu-win-title">{{ title }}</v-toolbar-title>
+      <v-toolbar-title class="dst-win-title">{{ title }}</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-app-bar-nav-icon @click="show = false"
         ><v-icon>close </v-icon></v-app-bar-nav-icon
       >
     </v-toolbar>
 
-    <wgu-layerlist />
+    <dst-layerlist />
   </v-card>
 </template>
 
@@ -22,10 +22,10 @@
 import LayerList from "./LayerList";
 
 export default {
-  name: "wgu-layerlist-win",
+  name: "dst-layerlist-win",
 
   components: {
-    "wgu-layerlist": LayerList,
+    "dst-layerlist": LayerList,
   },
   props: {
     color: { type: String, required: false, default: "red darken-3" },
@@ -36,7 +36,7 @@ export default {
   },
   data() {
     return {
-      moduleName: "wgu-layerlist",
+      moduleName: "dst-layerlist",
       show: false,
       left: this.initPos ? this.initPos.left + "px" : "10px",
       top: this.initPos ? this.initPos.top + "px" : "70px",
@@ -46,7 +46,7 @@ export default {
 </script>
 
 <style>
-.v-card.wgu-layerlist {
+.v-card.dst-layerlist {
   position: absolute;
   z-index: 2;
   display: flex !important;

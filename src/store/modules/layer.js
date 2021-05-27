@@ -69,7 +69,6 @@ const mutations = {
     state.infoHtml = _infoHtml;
   },
   clearFeatureInfo(state) {
-    debugger;
     state.infoHtml ="";
   },
 }

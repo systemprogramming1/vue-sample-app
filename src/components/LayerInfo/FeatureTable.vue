@@ -1,5 +1,5 @@
 <template>
-  <table class="wgu-proptable">
+  <table class="dst-proptable">
     <ul v-html="infoHtml">  </ul>
 
   </table>
@@ -23,27 +23,27 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-table.wgu-proptable {
+table.dst-proptable {
   border-radius: 3px;
   /* background-color: #fff; */
   width: 100%;
 }
 
-.wgu-proptable td {
+.dst-proptable td {
   background-color: #f9f9f9;
 }
 
-.wgu-proptable tr {
+.dst-proptable tr {
   font-size: 16px;
 }
 
-.wgu-proptable th,
-.wgu-proptable td {
+.dst-proptable th,
+.dst-proptable td {
   width: 200px;
   padding: 5px 5px;
 }
 
-.wgu-proptable td.key-td {
+.dst-proptable td.key-td {
   width: 160px;
   padding: 5px 5px;
 }

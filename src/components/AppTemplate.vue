@@ -1,12 +1,12 @@
 <template>
   <v-app>
-    <wgu-app-header
+    <dst-app-header
       :color="baseColor"
       :footerTextLeft="footerTextLeft"
       :footerTextRight="footerTextRight"
       :showCopyrightYear="showCopyrightYear"
     />
-    <wgu-app-map />
+    <dst-app-map />
 
     <template v-for="(moduleWin, index) in moduleWins">
       <component
@@ -18,7 +18,7 @@
     </template>
 
 
-    <wgu-app-footer
+    <dst-app-footer
       :color="baseColor"
       :footerTextLeft="footerTextLeft"
       :footerTextRight="footerTextRight"
@@ -37,12 +37,12 @@ import LayerListWin from '../components/Layer/LayerListWin'
 import LayerInfoWin from '../components/LayerInfo/InfoLayerWin'
 
 export default {
-  name: "wgu-app-tpl",
+  name: "dst-app-tpl",
   components: {
-    "wgu-app-header": AppHeader,
-    "wgu-app-footer": AppFooter,
-    "wgu-app-map": OlMap,
-    'wgu-layerlist-win': LayerListWin,
+    "dst-app-header": AppHeader,
+    "dst-app-footer": AppFooter,
+    "dst-app-map": OlMap,
+    'dst-layerlist-win': LayerListWin,
     'dst-infoclick-win': LayerInfoWin,
   },
   data() {

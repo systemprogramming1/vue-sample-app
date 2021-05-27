@@ -1,18 +1,18 @@
 <template>
   <v-card
-    class="wgu-infoclick-win"
+    class="dst-infoclick-win"
     v-if="show"
     v-bind:style="{ left: left, top: top }"
   >
     <v-toolbar :color="color" class="" dark>
       <v-icon>{{ icon }}</v-icon>
-      <v-toolbar-title class="wgu-win-title">{{ title }}</v-toolbar-title>
+      <v-toolbar-title class="dst-win-title">{{ title }}</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-app-bar-nav-icon @click="show = false"
         ><v-icon>close</v-icon></v-app-bar-nav-icon
       >
     </v-toolbar>
-    <v-card-title primary-title class="wgu-infoclick-win-title">
+    <v-card-title primary-title class="dst-infoclick-win-title">
       <div v-if="!this.attributeData" class="no-data">
         Bilgi almak istediğiniz noktaya tıklayınız.
       </div>
@@ -242,23 +242,23 @@ export default {
 </script>
 
 <style>
-.wgu-infoclick-win {
+.dst-infoclick-win {
   background-color: white;
   z-index: 2;
   width: 350px;
 }
 
-.v-card.wgu-infoclick-win {
+.v-card.dst-infoclick-win {
   position: absolute;
 }
 
-.wgu-infoclick-win .v-card__title {
+.dst-infoclick-win .v-card__title {
   display: inherit;
 }
 
 @media (max-width: 600px) {
   /* tmp. approach to position on small screens */
-  .v-card.wgu-infoclick-win {
+  .v-card.dst-infoclick-win {
     /* tmp. fix */
     left: 0 !important;
     top: 40% !important;
@@ -266,7 +266,7 @@ export default {
     max-width: 600px;
   }
 
-  .wgu-infoclick-win-title {
+  .dst-infoclick-win-title {
     overflow: scroll;
     max-height: 300px;
   }

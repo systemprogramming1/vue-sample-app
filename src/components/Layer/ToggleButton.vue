@@ -14,9 +14,9 @@ import LayerListWin from './LayerListWin'
 import { AppEventBus } from '../../AppEventBus'
 
 export default {
-  name: 'wgu-layerlist-btn',
+  name: 'dst-layerlist-btn',
   components: {
-    'wgu-layerlist-win': LayerListWin
+    'dst-layerlist-win': LayerListWin
   },
   props: {
     icon: {type: String, required: false, default: 'layers'},
@@ -25,7 +25,7 @@ export default {
   },
   data: function () {
     return {
-      moduleName: 'wgu-layerlist'
+      moduleName: 'dst-layerlist'
     }
   },
   created () {

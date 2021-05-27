@@ -22,7 +22,7 @@ import LayerUtil from "../../util/layerUtil";
 import Vue from "vue";
 
 export default {
-  name: "wgu-layerlist",
+  name: "dst-layerlist",
   mixins: [mapableMixin],
   props: {},
   data() {
@@ -117,7 +117,7 @@ export default {
 </script>
 
 <style>
-.wgu-layer-viz-cb {
+.dst-layer-viz-cb {
   width: 45px;
 }
 </style>

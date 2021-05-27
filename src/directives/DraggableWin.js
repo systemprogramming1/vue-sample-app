@@ -104,7 +104,7 @@ export const DraggableWin = {
       // eg: `v-drag:drag-header` means only the element with
       // id="drag-header" or class="drag-header" should be draggable.
       // If the user clicked another area, do nothing.
-      // By default it is restricted to class="wgu-win-title"
+      // By default it is restricted to class="dst-win-title"
       if (_data.draggableElementSelector &&
           !checkIfSelectorInPath(_data.draggableElementSelector, e.path)) {
         return;

@@ -12,7 +12,7 @@
 import { mapableMixin } from '../../mixin/mapableMixin';
 
 export default {
-  name: 'wgu-zoomtomaxextent-btn',
+  name: 'dst-zoomtomaxextent-btn',
   mixins: [mapableMixin],
   props: {
     icon: {type: String, required: false, default: 'zoom_out_map'},

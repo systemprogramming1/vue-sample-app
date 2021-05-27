@@ -1,20 +1,20 @@
 <template>
   <v-app-bar
-    class="wgu-app-toolbar white--text"
+    class="dst-app-toolbar white--text"
     :color="color"
     fixed
     app
     clipped-right
   >
-    <slot name="wgu-tb-start"></slot>
+    <slot name="dst-tb-start"></slot>
 
     <v-toolbar-title>{{ title }}</v-toolbar-title>
 
-    <slot name="wgu-tb-after-title"></slot>
+    <slot name="dst-tb-after-title"></slot>
 
     <v-spacer></v-spacer>
 
-    <slot name="wgu-tb-before-auto-buttons"></slot>
+    <slot name="dst-tb-before-auto-buttons"></slot>
 
     <template v-for="(tbButton, index) in tbButtons">
       <component
@@ -27,7 +27,7 @@
       />
     </template>
 
-    <slot name="wgu-tb-after-auto-buttons"></slot>
+    <slot name="dst-tb-after-auto-buttons"></slot>
 
     <v-menu v-if="menuButtons.length" offset-y>
       <template v-slot:activator="{ on }">
@@ -49,7 +49,7 @@
       </v-list>
     </v-menu>
 
-    <slot name="wgu-tb-end"></slot>
+    <slot name="dst-tb-end"></slot>
   </v-app-bar>
 </template>
 <script>
@@ -61,12 +61,12 @@ import InfoClickButton from '../LayerInfo/ToggleButton'
 import LogoutToggleButton from '../Login/Logout'
 
 export default {
-  name: "wgu-app-header",
+  name: "dst-app-header",
   components: {
-    "wgu-helpwin-btn": HelpWin,
-    'wgu-zoomtomaxextent-btn': ZoomToMaxExtentButton,
-    'wgu-layerlist-btn': LayerListToggleButton,
-    'wgu-logout-btn': LogoutToggleButton,
+    "dst-helpwin-btn": HelpWin,
+    'dst-zoomtomaxextent-btn': ZoomToMaxExtentButton,
+    'dst-layerlist-btn': LayerListToggleButton,
+    'dst-logout-btn': LogoutToggleButton,
     'dst-infoclick-btn': InfoClickButton,
   },
   props: {

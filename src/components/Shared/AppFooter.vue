@@ -1,8 +1,8 @@
 <template>
   <v-footer :color="color" class="white--text" app>
-    <span class="wgu-footer-left" v-html="footerTextLeft"></span>
+    <span class="dst-footer-left" v-html="footerTextLeft"></span>
     <v-spacer></v-spacer>
-    <div class="wgu-footer-right">
+    <div class="dst-footer-right">
       <span v-html="footerTextRight"></span>
       <span v-if="showCopyrightYear"
         >&copy; {{ new Date().getFullYear() }}</span
@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: "wgu-app-footer",
+  name: "dst-app-footer",
   props: {
     color: { type: String, required: false, default: "red darken-3" },
     footerTextLeft: {

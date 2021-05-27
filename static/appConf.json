@@ -26,13 +26,6 @@
     "mapZoom": 15,   
     "mapCenter": [3852843.038609613, 4411853.912113898],
     "projection": "EPSG:3857",
-    "mapGeodataDragDop": {
-      "formats": ["GeoJSON", "KML"],
-      "zoomToData": true,
-      "replaceData": true,
-      "displayInLayerList": true,
-      "layerName": "Uploaded Data"
-    },
   
     "permalink": {
       "location": "hash",
@@ -44,7 +37,7 @@
     },
   
     "modules": {
-      "wgu-layerlist": {
+      "dst-layerlist": {
         "target": "menu",
         "win": true,
         "draggable": true,
@@ -62,11 +55,11 @@
           "top": 74
         }
       },
-      "wgu-zoomtomaxextent": {
+      "dst-zoomtomaxextent": {
         "target": "toolbar",
         "darkLayout": true
       },
-      "wgu-helpwin": {
+      "dst-helpwin": {
         "target": "toolbar",
         "darkLayout": true, 
         "windowTitle": "Hakkında",
@@ -75,7 +68,7 @@
         "infoLinkText": "More Info",
         "infoLinkUrl": ""
       },
-      "wgu-logout": {
+      "dst-logout": {
         "target": "toolbar",
         "darkLayout": true
       }

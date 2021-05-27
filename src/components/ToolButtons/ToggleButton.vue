@@ -13,7 +13,7 @@
       <p>{{value}}</p> -->
     </template>
 
-    <wgu-helpwin
+    <dst-helpwin
       ref="helpwin"
       :color="color"
       :icon="icon"
@@ -31,9 +31,9 @@
 import HelpWin from "./HelpWin";
 import Vue from "vue";
 export default {
-  name: "wgu-helpwin-btn",
+  name: "dst-helpwin-btn",
   components: {
-    "wgu-helpwin": HelpWin,
+    "dst-helpwin": HelpWin,
   },
   props: {
     color: { type: String, required: false, default: "red darken-3" },
