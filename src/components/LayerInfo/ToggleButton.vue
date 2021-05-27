@@ -24,7 +24,6 @@ export default {
   },
   created() {
     var me = this;
-    // TODO move to a father class
     AppEventBus.$on("app-mounted", () => {
       me.win = Vue.prototype.cmpLookup[me.moduleName + "-win"];
     });
@@ -35,13 +34,8 @@ export default {
   methods: {
     toggleUi() {
       store.commit("clearFeatureInfo");
-      // TODO move to a father class
       this.win.show = !this.win.show;
     },
   },
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
-</style>

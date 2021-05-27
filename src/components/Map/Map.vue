@@ -6,7 +6,6 @@ import Vue from "vue";
 import "ol/ol.css";
 import Map from "ol/Map";
 import View from "ol/View";
-import { defaults as defaultControls, ScaleLine } from "ol/control";
 import { AppEventBus } from "../../AppEventBus";
 
 export default {

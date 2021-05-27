@@ -13,13 +13,12 @@
       >
     </v-toolbar>
     <v-card-title primary-title class="wgu-infoclick-win-title">
-      <div v-if="!this.coordsData" class="no-data">
-        Lütfen bilgi almak istediğiniz noktaya tıklayınız...
+      <div v-if="!this.attributeData" class="no-data">
+        Lütfen bilgi almak istediğiniz noktaya tıklayınız.
       </div>
 
       <dst-property-table :color="color" />
 
-      <!-- <dst-coords-table :coordsData="coordsData" :color="color" /> -->
     </v-card-title>
   </v-card>
 </template>
@@ -27,7 +26,6 @@
 <script>
 import { AppEventBus } from "../../AppEventBus";
 import PropertyTable from "./PropertyTable";
-import CoordsTable from "./CoordsTable";
 import LayerUtil from "../../util/layerUtil";
 import GeoJSON from "ol/format/GeoJSON";
 import { store } from "../../store/store";
@@ -35,8 +33,7 @@ import { store } from "../../store/store";
 export default {
   name: "dst-infoclick-win",
   components: {
-    "dst-property-table": PropertyTable,
-    "dst-coords-table": CoordsTable,
+    "dst-property-table": PropertyTable
   },
   props: {
     color: { type: String, required: false, default: "red darken-3" },
@@ -50,8 +47,7 @@ export default {
       show: false,
       left: this.initPos ? this.initPos.left + "px" : "0",
       top: this.initPos ? this.initPos.top + "px" : "0",
-      attributeData: null,
-      coordsData: null,
+      attributeData: ""
     };
   },
   created() {
@@ -225,10 +221,7 @@ export default {
     },
     onMapClick(evt) {
       this.getInfo(evt);
-      this.coordsData = {
-        coordinate: evt.coordinate,
-        projection: this.map.getView().getProjection().getCode(),
-      };
+      this.attributeData="icerik";
     },
   },
   watch: {
@@ -238,7 +231,6 @@ export default {
         me.registerMapClick();
       } else {
         me.attributeData = null;
-        me.coordsData = null;
       }
     },
   },

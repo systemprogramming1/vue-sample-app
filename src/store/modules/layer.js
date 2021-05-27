@@ -42,22 +42,22 @@ const mutations = {
         }
       });
 
-      const layer = new TileLayer({
-        name: "WMS",
-        title: _group.layerName,
-        crossOrigin: "Anonymous",
-        source: new TileWmsSource({
-          url: Vue.prototype.$appConfig.geoserver_Url,
-          params: {
-            LAYERS: _openLayers.join(","),
-            TILED: false,
-            FORMAT: "image/png8",
-            CQL_FILTER: _cqlFilter.join(";"),
-            TRANSPARENT: true
-          },
-          projection: "EPSG:3857",
-        }),
-      });
+        const layer = new TileLayer({
+          name: "WMS",
+          title: _group.layerName,
+          crossOrigin: "Anonymous",
+          source: new TileWmsSource({
+            url: Vue.prototype.$appConfig.geoserver_Url,
+            params: {
+              LAYERS: _openLayers.join(","),
+              TILED: false,
+              FORMAT: "image/png8",
+              CQL_FILTER: _cqlFilter.join(";"),
+              TRANSPARENT: true
+            },
+            projection: "EPSG:3857",
+          }),
+        });
       this._layerList.push(layer);
     });
     state.layerList = this._layerList;
