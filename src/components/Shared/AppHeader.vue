@@ -55,7 +55,7 @@
 <script>
 import Vue from "vue";
 import HelpWin from "../ToolButtons/ToggleButton";
-import ZoomToMaxExtentButton from "../ToolButtons/ZoomToMaxExtentButton";
+import ZoomToMaxExtentButton from "../Map/ZoomToMaxExtentButton";
 import LayerListToggleButton from '../Layer/ToggleButton'
 import InfoClickButton from '../LayerInfo/ToggleButton'
 import LogoutToggleButton from '../Login/Logout'
