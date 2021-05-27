@@ -24,7 +24,7 @@
 
 <script>
 import { AppEventBus } from "../../AppEventBus";
-import PropertyTable from "./PropertyTable";
+import FeatureTable from "./FeatureTable";
 import LayerUtil from "../../util/layerUtil";
 import GeoJSON from "ol/format/GeoJSON";
 import { store } from "../../store/store";
@@ -32,7 +32,7 @@ import { store } from "../../store/store";
 export default {
   name: "dst-infoclick-win",
   components: {
-    "dst-property-table": PropertyTable,
+    "dst-property-table": FeatureTable,
   },
   props: {
     color: { type: String, required: false, default: "red darken-3" },
