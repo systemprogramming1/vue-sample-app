@@ -221,7 +221,7 @@ export default {
     },
     onMapClick(evt) {
       this.getInfo(evt);
-      this.attributeData="icerik";
+      this.attributeData="GetInfo";
     },
   },
   watch: {
