@@ -1,6 +1,9 @@
 {
 
     "title": "Sudabis Vue.js / OpenLayers",
+    "titleImage":"../../../static/img/web_logo_300x60.png",
+
+    "headerImage":"../../../static/img/baraj.jpg",
   
     "baseColor": "blue darken-1",
   

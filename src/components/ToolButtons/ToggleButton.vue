@@ -37,7 +37,7 @@ export default {
   },
   props: {
     color: { type: String, required: false, default: "red darken-3" },
-    icon: { type: String, required: false, default: "help" },
+    icon: { type: String, required: false, default: "mdi-magnify" },
     text: { type: String, required: false },
     dark: { type: Boolean, required: false, default: false },
     headline: { type: String, required: false },

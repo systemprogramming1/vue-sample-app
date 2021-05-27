@@ -101,13 +101,14 @@ const actions = {
 
         loginService.funcLogOff().
             then(response => {
-
+                commit("clearToken");
+                commit("MUTATE_SET_RESET_STATE");
+                sessionStorage.clear();
             }).
             catch(ex => {
+                sessionStorage.clear();
             });
-        commit("clearToken");
-        commit("MUTATE_SET_RESET_STATE");
-        sessionStorage.clear();
+      
         router.push("/Login").catch(() => { });
 
     },
