@@ -174,7 +174,7 @@ export default {
                   var _title = LayerUtil.GetLayerTitle(menuName);
 
                   icerik +=
-                    '<li class="info-list-item" onclick="ShowInfoDetail(\'' +
+                    '<li class="no-bullets" onclick="ShowInfoDetail(\'' +
                     serviceName +
                     "','" +
                     uniqField +
@@ -190,7 +190,7 @@ export default {
                     is_detail +
                     "','" +
                     menuName +
-                    '\')"><i class="ti-hand-point-right"></i> ' +
+                    '\')"> <i class="fa fa-layer-group"></i> ' +
                     _title +
                     " (" +
                     displayText +
@@ -242,10 +242,16 @@ export default {
 </script>
 
 <style>
+.li:hover{
+background-color:#7accec;
+}
+.no-bullets {
+    list-style-type: none;
+}
 .dst-infoclick-win {
   background-color: white;
   z-index: 2;
-  width: 350px;
+  width: 325px;
 }
 
 .v-card.dst-infoclick-win {
