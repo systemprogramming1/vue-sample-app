@@ -41,7 +41,7 @@ const mutations = {
           _cqlFilter.push(" auth_region_id IN(" + authList + ")");
         }
       });
-
+      if (_openLayers.length > 0) {
         const layer = new TileLayer({
           name: "WMS",
           title: _group.layerName,
@@ -58,15 +58,19 @@ const mutations = {
             projection: "EPSG:3857",
           }),
         });
-      this._layerList.push(layer);
+        this._layerList.push(layer);
+      }
+
     });
+
     state.layerList = this._layerList;
   },
   updateFeatureInfo(state, _infoHtml) {
     state.infoHtml = _infoHtml;
   },
   clearFeatureInfo(state) {
-    state.infoHtml = "";
+    debugger;
+    state.infoHtml ="";
   },
 }
 

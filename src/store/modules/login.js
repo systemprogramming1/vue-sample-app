@@ -57,15 +57,12 @@ const mutations = {
             (a) => a.languageCode == state.selectedLang);
         var layerItems = [];
         layers.forEach(function (layer) {
-            if (layer.isOpen === false) {
-                return;
-            }
-            layerItems.push({
-                layerTitle: layer.groupName,
-                layerName: layer.groupKey,
-                children: layer.layers,
-                workspaceName: layer.workspaceName,
-            });
+                layerItems.push({
+                    layerTitle: layer.groupName,
+                    layerName: layer.groupKey,
+                    children: layer.layers,
+                    workspaceName: layer.workspaceName,
+                });
         });
         state.userLayers = layerItems;
         sessionStorage.setItem("userLayers", JSON.stringify(layerItems));

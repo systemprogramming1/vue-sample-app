@@ -14,11 +14,10 @@
     </v-toolbar>
     <v-card-title primary-title class="wgu-infoclick-win-title">
       <div v-if="!this.attributeData" class="no-data">
-        Lütfen bilgi almak istediğiniz noktaya tıklayınız.
+        Bilgi almak istediğiniz noktaya tıklayınız.
       </div>
 
       <dst-property-table :color="color" />
-
     </v-card-title>
   </v-card>
 </template>
@@ -33,12 +32,12 @@ import { store } from "../../store/store";
 export default {
   name: "dst-infoclick-win",
   components: {
-    "dst-property-table": PropertyTable
+    "dst-property-table": PropertyTable,
   },
   props: {
     color: { type: String, required: false, default: "red darken-3" },
     icon: { type: String, required: false, default: "info" },
-    title: { type: String, required: false, default: "Bilgi Al" },
+    title: { type: String, required: false, default: " Katman Bilgisi" },
     draggable: { type: Boolean, required: false, default: true },
     initPos: { type: Object, required: false },
   },
@@ -47,7 +46,7 @@ export default {
       show: false,
       left: this.initPos ? this.initPos.left + "px" : "0",
       top: this.initPos ? this.initPos.top + "px" : "0",
-      attributeData: ""
+      attributeData: "",
     };
   },
   created() {
@@ -61,7 +60,6 @@ export default {
   methods: {
     registerMapClick(unregister) {
       var me = this;
-
       if (unregister === true) {
         me.map.un("singleclick", me.onMapClick);
       } else {
@@ -70,9 +68,6 @@ export default {
     },
     getInfo(evt) {
       var layerList = store.getters.getUserLayer;
-
-      var vectorFormat = new GeoJSON();
-
       var query_layers = "";
       var _arr = [];
       var _cqlFilter = [];
@@ -80,11 +75,12 @@ export default {
         var layerName = layerList[i].layerName;
         if (layerName != "WEB-TAK") {
           var _layer = LayerUtil.getLayerByTitle(layerName, this.map);
-
-          if (_layer.getSource() != null) {
-            _arr.push(_layer.getSource().getParams().LAYERS);
-            if (_layer.getSource().getParams().CQL_FILTER != "") {
-              _cqlFilter.push(_layer.getSource().getParams().CQL_FILTER);
+          if (_layer != undefined) {
+            if (_layer.getSource() != null) {
+              _arr.push(_layer.getSource().getParams().LAYERS);
+              if (_layer.getSource().getParams().CQL_FILTER != "") {
+                _cqlFilter.push(_layer.getSource().getParams().CQL_FILTER);
+              }
             }
           }
         }
@@ -146,7 +142,7 @@ export default {
             if (
               this.status === 200 &&
               this.response != null &&
-              this.response.features != null
+              this.response.features != null && this.response.features.length>0
             ) {
               var _arr = this.response.features;
               var _wkt = _arr;
@@ -203,10 +199,14 @@ export default {
                   if (icerik.trim().length > 0) {
                     store.commit("updateFeatureInfo", icerik);
                   } else {
+                    store.commit("clearFeatureInfo");
                     store.commit("showNotification", "DST-103");
                   }
                 }
               }
+            }
+            else{
+                store.commit("clearFeatureInfo");
             }
           };
           xhr.setRequestHeader(
@@ -216,21 +216,25 @@ export default {
           xhr.send(params);
         }
       } else {
+        store.commit("clearFeatureInfo");
         store.commit("showNotification", "DST-328");
       }
     },
     onMapClick(evt) {
       this.getInfo(evt);
-      this.attributeData="GetInfo";
+      this.attributeData = "GetInfo";
     },
   },
   watch: {
     show() {
       const me = this;
       if (this.show === true) {
+        window.isInfoActive = true;
+        this.map.getTargetElement().style.cursor = "crosshair";
         me.registerMapClick();
       } else {
         me.attributeData = null;
+        this.map.getTargetElement().style.cursor = "grab";
       }
     },
   },
@@ -241,7 +245,7 @@ export default {
 .wgu-infoclick-win {
   background-color: white;
   z-index: 2;
-  width: 250px;
+  width: 350px;
 }
 
 .v-card.wgu-infoclick-win {

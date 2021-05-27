@@ -105,7 +105,7 @@ export default {
             _layer.setSource(null);
           }
         } else {
-          _layer.setSource(null);
+          
         }
       }
     },
