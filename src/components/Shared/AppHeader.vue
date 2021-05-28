@@ -63,6 +63,9 @@ import ZoomToMaxExtentButton from "../Map/ZoomToMaxExtentButton";
 import LayerListToggleButton from "../Layer/ToggleButton";
 import InfoClickButton from "../LayerInfo/ToggleButton";
 import LogoutToggleButton from "../Login/Logout";
+import headerImg from "../../../static/img/baraj.jpg";
+import titleImg from "../../../static/img/web_logo_300x60.png";
+
 export default {
   name: "dst-app-header",
   components: {
@@ -80,8 +83,8 @@ export default {
       title: this.$appConfig.title,
       menuButtons: this.getModuleButtonData() || [],
       tbButtons: this.getToolbarButtons() || [],
-      headerLogo: this.$appConfig.headerImage,
-      titleLogo: this.$appConfig.titleImage,
+      headerLogo: headerImg,
+      titleLogo: titleImg,
      collapseOnScroll: true,
     };
   },

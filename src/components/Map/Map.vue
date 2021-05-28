@@ -8,6 +8,7 @@ import Map from "ol/Map";
 import View from "ol/View";
 import { AppEventBus } from "../../AppEventBus";
 import ZoomSlider from "ol/control/ZoomSlider";
+import ScaleLine from "ol/control/ScaleLine";
 
 export default {
   mounted() {
@@ -31,7 +32,9 @@ export default {
       });
 
       Vue.prototype.$map = map;
-      map.getControls().extend([new ZoomSlider()]);
+      map
+        .getControls()
+        .extend([new ScaleLine(), new ScaleLine(), new ZoomSlider()]);
       AppEventBus.$emit("ol-map-mounted", map);
     },
   },
@@ -45,13 +48,20 @@ export default {
   height: 99%;
   width: 100%;
 }
-
+#map .ol-scale-line {
+    background: rgba(0,60,136,0.3);
+    border-radius: 4px;
+    bottom: 33px;
+    left: 8px;
+    padding: 2px;
+    position: absolute;
+}
 #map .ol-zoom .ol-zoom-out {
   margin-top: 200px;
 }
 #map .ol-zoomslider {
   background-color: #ece5d7;
-  top: 14.0em;
+  top: 14em;
 }
 
 #map .ol-zoom {

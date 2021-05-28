@@ -13,10 +13,8 @@
       >
     </v-toolbar>
     <v-card-title primary-title class="dst-infoclick-win-title">
-      <div v-if="!this.attributeData" class="no-data">
-        Bilgi almak istediğiniz noktaya tıklayınız.
-      </div>
-
+      <div v-if="!this.attributeData" style="font-size:15px">
+        Bilgi almak istediğiniz noktaya tıklayınız. </div>
       <dst-property-table :color="color" />
     </v-card-title>
   </v-card>
@@ -174,7 +172,7 @@ export default {
                   var _title = LayerUtil.GetLayerTitle(menuName);
 
                   icerik +=
-                    '<li class="no-bullets" onclick="ShowInfoDetail(\'' +
+                    '<li class="no-bullets"  @click="ShowInfoDetail(\'' +
                     serviceName +
                     "','" +
                     uniqField +
@@ -219,6 +217,10 @@ export default {
         store.commit("clearFeatureInfo");
         store.commit("showNotification", "DST-328");
       }
+    },
+
+    ShowInfoDetail(){
+
     },
     onMapClick(evt) {
       this.getInfo(evt);

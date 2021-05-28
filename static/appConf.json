@@ -1,9 +1,6 @@
 {
 
     "title": "Sudabis Vue.js / OpenLayers",
-    "titleImage":"../../../static/img/web_logo_300x60.png",
-
-    "headerImage":"../../../static/img/baraj.jpg",
   
     "baseColor": "blue darken-1",
   
@@ -26,7 +23,7 @@
     "DefaultItemsLang": 
       { "id": "1", "text": "Türkçe" }
     ,
-    "mapZoom": 15,   
+    "mapZoom": 10,   
     "mapCenter": [3852843.038609613, 4411853.912113898],
     "projection": "EPSG:3857",
   

@@ -78,6 +78,9 @@
 <script>
 import LoadingBar from "../Shared/LoadingBar.vue";
 import "../../../static/css/login.css";
+import titleImg from "../../../static/img/web_logo_300x60.png";
+
+
 export default {
   components: {
     LoadingBar,
@@ -90,7 +93,7 @@ export default {
       rememberMe: false,
       password: "",
       show1: false,
-      headerLogo: this.$appConfig.titleImage,
+      headerLogo: titleImg,
       DefaultSelectedLang: this.$appConfig.DefaultItemsLang,
       rules: {
         required: (value) => !!value || "Gerekli.",
