@@ -1,6 +1,6 @@
 {
 
-    "title": "Sudabis Vue.js / OpenLayers",
+    "title": "Vue.js / OpenLayers",
   
     "baseColor": "blue darken-1",
   
@@ -9,12 +9,12 @@
     "logoHeight": "100",
   
     "footerTextLeft": "Powered by <a href='https://www.basarsoft.com.tr/' target='_blank'>Sudabis</a>",
-    "footerTextRight": "Başarsoft",
+    "footerTextRight": "",
     "showCopyrightYear": true,
 
-    "webApi_Url": "http://dst.basarsoft.com.tr/Meski/WebService",
+    "webApi_Url": "",
 
-    "geoserver_Url": "http://dst.basarsoft.com.tr/basarserver/MESKI/wms",
+    "geoserver_Url": "",
 
     "itemsLang": [
       { "id": "1", "text": "Türkçe" },
@@ -64,7 +64,7 @@
         "darkLayout": true, 
         "windowTitle": "Hakkında",
         "textTitle": "About Project",
-        "htmlContent": "<b>Sudabis with OpenLayers and Vue.js</b>",
+        "htmlContent": "<b> OpenLayers and Vue.js</b>",
         "infoLinkText": "More Info",
         "infoLinkUrl": ""
       },
